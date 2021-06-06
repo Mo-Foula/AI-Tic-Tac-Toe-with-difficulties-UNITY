@@ -6,18 +6,16 @@ public class OnHit : MonoBehaviour {
     
     public GameObject Camera;
     public GameScript Script;
-
+    public int square_index;
     void Awake()
     {
-        
         //camera = GameObject.FindGameObjectWithTag("MainCamera");
         Script = Camera.GetComponent<GameScript>();
     }
 
     void OnMouseDown()
     {
-        Debug.Log("shit");
-        Script.SpawnNew(this.gameObject);
+        Script.SpawnNew(this.gameObject,square_index);
         
     }
     
